@@ -1,2 +1,12 @@
+[project]
+name = "fleet"
+version = "0.1.0"
+description = "Fleet telemetry tracking app"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+]
+
 [tool.vercel]
 entrypoint = "ingest:app"
