@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Relay Fleet locally",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				".\\start_local_app.py"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate fleet feature backend",
+			"type": "shell",
+			"command": "C:\\Program Files\\Apache NetBeans\\java\\maven\\bin\\mvn.cmd",
+			"args": [
+				"-f",
+				"C:\\Users\\lewis\\OneDrive\\Desktop\\fleet\\backend\\pom.xml",
+				"test"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

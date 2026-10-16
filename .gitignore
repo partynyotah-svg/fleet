@@ -1,0 +1,9 @@
+.env
+.build/
+target/
+__pycache__/
+*.py[cod]
+.venv/
+*.log
+*.pid
+postgres-data/

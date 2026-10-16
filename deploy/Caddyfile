@@ -1,0 +1,22 @@
+{
+  email {$ACME_EMAIL}
+  admin off
+}
+
+{$FLEET_DOMAIN} {
+  encode zstd gzip
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    X-Frame-Options "DENY"
+    -Server
+  }
+  @device path /v1/telemetry /v1/telemetry/*
+  handle @device {
+    reverse_proxy ingest:8090
+  }
+  handle {
+    reverse_proxy app:8080
+  }
+}
